@@ -8,10 +8,10 @@ A collection of cute, interactive surprises, mini-games, and lovely pranks for y
 - **Creativity-First**: No need for design consistency. Each page is a unique experience.
 
 ## 🎮 Current Surprises
-- **Do you like me?**: [View Surprise (s/be-mine-2b7k/)](s/be-mine-2b7k/index.html) - A cute bear asks the big question. (But the "No" button has a mind of its own!)
-- **Digital Scratch Card**: [View Surprise (s/secret-msg-4v9x/)](s/secret-msg-4v9x/index.html) - Scratch a silver layer to reveal a hidden secret message and voucher.
-- **The Compliment Jar**: [View Surprise (s/sweet-jar-5n7m/)](s/sweet-jar-5n7m/index.html) - Open the jar to release floating hearts filled with sweet compliments.
-- **Hungry Corgi Fetch**: [View Surprise (s/corgi-fetch-9d3k/)](s/corgi-fetch-9d3k/index.html) - Feed the cute Corgi floating treats to reveal a special paw-some message!
+- **Do you like me?**: [https://ashish-kumarsoni.github.io/surprises/s/be-mine-2b7k/](https://ashish-kumarsoni.github.io/surprises/s/be-mine-2b7k/) - A cute bear asks the big question. (But the "No" button has a mind of its own!)
+- **Digital Scratch Card**: [https://ashish-kumarsoni.github.io/surprises/s/secret-msg-4v9x/](https://ashish-kumarsoni.github.io/surprises/s/secret-msg-4v9x/) - Scratch a silver layer to reveal a hidden secret message and voucher.
+- **The Compliment Jar**: [https://ashish-kumarsoni.github.io/surprises/s/sweet-jar-5n7m/](https://ashish-kumarsoni.github.io/surprises/s/sweet-jar-5n7m/) - Open the jar to release floating hearts filled with sweet compliments.
+- **Hungry Corgi Fetch**: [https://ashish-kumarsoni.github.io/surprises/s/corgi-fetch-9d3k/](https://ashish-kumarsoni.github.io/surprises/s/corgi-fetch-9d3k/) - Feed the cute Corgi floating treats to reveal a special paw-some message!
 
 ## 🛠️ How to Add a New Surprise
 1. Create a new folder inside `/s/` with a non-guessable name: `mkdir s/love-letter-x9y2`
