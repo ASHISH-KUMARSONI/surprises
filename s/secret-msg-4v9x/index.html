@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>A Secret for You!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Outfit:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-decor"></div>
+
+    <div class="card-container">
+        <h1 class="title">Scratch to reveal! ✨</h1>
+
+        <div class="scratch-card">
+            <!-- Hidden Content (Layer Underneath) -->
+            <div class="hidden-content">
+                <div class="content-wrapper">
+                    <span class="emoji">🎁</span>
+                    <h2 class="reveal-title">Special Voucher</h2>
+                    <p class="reveal-text">"Good for one Coffee Date & Infinite Hugs!"</p>
+                    <p class="reveal-subtext">Valid Forever ❤️</p>
+                </div>
+            </div>
+
+            <!-- The Scratch Layer (Canvas) -->
+            <canvas id="scratch-canvas"></canvas>
+        </div>
+
+        <p class="instruction">Use your finger or mouse to scratch!</p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
