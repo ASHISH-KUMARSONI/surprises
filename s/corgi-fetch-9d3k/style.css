@@ -1,0 +1,409 @@
+:root {
+    --sky-color: #e3f2fd;
+    --primary: #fb8c00;
+    --accent: #ff4081;
+    --dog-color: #ff9800;
+    --text: #4e342e;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--sky-color);
+    font-family: 'Quicksand', sans-serif;
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    touch-action: none;
+}
+
+#game-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    z-index: 10;
+}
+
+.sky-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cloud {
+    position: absolute;
+    font-size: 5rem;
+    opacity: 0.4;
+    animation: drift 30s linear infinite;
+}
+
+@keyframes drift {
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: 110%;
+    }
+}
+
+.cloud1 {
+    top: 15%;
+    animation-duration: 45s;
+}
+
+.cloud2 {
+    top: 40%;
+    right: -100px;
+    animation-duration: 55s;
+    animation-direction: reverse;
+}
+
+/* --- UI Styling --- */
+.ui {
+    text-align: center;
+    position: relative;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+#headline {
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.progress-bar-container {
+    width: 250px;
+    height: 15px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 10px auto;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff9100 0%, #ff4081 100%);
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#counter-text {
+    font-weight: 700;
+    margin-top: 10px;
+    color: #ef6c00;
+}
+
+/* --- The Corgi --- */
+.corgi-wrapper {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.corgi {
+    width: 180px;
+    height: 150px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Handcrafted CSS Corgi */
+.corgi .body {
+    width: 160px;
+    height: 100px;
+    background: var(--dog-color);
+    border-radius: 50px 50px 30px 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    box-shadow: inset 0 -10px 0 rgba(0, 0, 0, 0.05);
+    border: 3px solid #ffcc80;
+}
+
+.corgi .face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.ear {
+    width: 45px;
+    height: 70px;
+    background: var(--dog-color);
+    border-radius: 100% 100% 0 0;
+    position: absolute;
+    top: -30px;
+    border: 3px solid #ffcc80;
+}
+
+.ear.left {
+    left: 20px;
+    transform: rotate(-10deg);
+}
+
+.ear.right {
+    right: 20px;
+    transform: rotate(10deg);
+}
+
+.eye {
+    width: 10px;
+    height: 10px;
+    background: var(--text);
+    border-radius: 50%;
+    position: absolute;
+    top: 35px;
+}
+
+.eye.left {
+    left: 40px;
+}
+
+.eye.right {
+    right: 40px;
+}
+
+.blush {
+    width: 20px;
+    height: 10px;
+    background: #ff8a80;
+    border-radius: 50%;
+    position: absolute;
+    top: 45px;
+    opacity: 0.6;
+}
+
+.blush.left {
+    left: 30px;
+}
+
+.blush.right {
+    right: 30px;
+}
+
+.nose {
+    width: 14px;
+    height: 10px;
+    background: var(--text);
+    border-radius: 40% 40% 50% 50%;
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mouth {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    animation: pant 0.3s infinite alternate;
+}
+
+@keyframes pant {
+    from {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(5px);
+    }
+}
+
+.tail {
+    width: 40px;
+    height: 40px;
+    background: var(--dog-color);
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+    bottom: 40px;
+    transform-origin: left bottom;
+    animation: wag-slow 0.4s infinite alternate alternate-reverse;
+}
+
+@keyframes wag-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes wag-fast {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(100deg);
+    }
+}
+
+.paw {
+    width: 30px;
+    height: 40px;
+    background: var(--white);
+    position: absolute;
+    bottom: 0px;
+    border-radius: 20px;
+    border: 3px solid #ffcc80;
+}
+
+.paw.left {
+    left: 30px;
+}
+
+.paw.right {
+    right: 30px;
+}
+
+/* --- Bubbles --- */
+.treat-bubble {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: floatUp 4s linear forwards;
+    z-index: 50;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.treat-bubble:active {
+    transform: scale(0.9) rotate(-10deg);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(110vh) translateX(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-20vh) translateX(30px);
+        opacity: 0;
+    }
+}
+
+/* --- Reward Overlay --- */
+#reward-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 236, 179, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.envelope {
+    background: #fff;
+    padding: 50px 30px;
+    border-radius: 40px;
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transform: scale(0);
+    animation: popReward 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.heart-seal {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: pulse 1s infinite;
+}
+
+.reward-title {
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.reward-msg {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4e342e;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.reset-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(255, 64, 129, 0.2);
+}
+
+@keyframes popReward {
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.hidden {
+    display: none !important;
+}

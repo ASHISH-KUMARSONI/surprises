@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Who's a Good Boy? 🐶</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&family=Quicksand:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- Floating Decor -->
+        <div class="sky-decor">
+            <div class="cloud cloud1">☁️</div>
+            <div class="cloud cloud2">☁️</div>
+        </div>
+
+        <div class="ui">
+            <h1 id="headline">Feed the hungry Corgi! 🦴</h1>
+            <div class="progress-bar-container">
+                <div id="progress" class="progress-bar"></div>
+            </div>
+            <p id="counter-text">Treats needed: <span id="count">5</span></p>
+        </div>
+
+        <!-- The Corgi (Bottom Centered) -->
+        <div class="corgi-wrapper">
+            <div class="corgi" id="corgi-actor">
+                <div class="ear left"></div>
+                <div class="ear right"></div>
+                <div class="body">
+                    <div class="face">
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+                        <div class="blush left"></div>
+                        <div class="blush right"></div>
+                        <div class="nose"></div>
+                        <div class="mouth">👅</div>
+                    </div>
+                </div>
+                <div class="paws">
+                    <div class="paw left"></div>
+                    <div class="paw right"></div>
+                </div>
+                <div class="tail" id="corgi-tail"></div>
+            </div>
+        </div>
+
+        <!-- Target Container for Bubbles -->
+        <div id="target-area"></div>
+
+        <!-- Reward Overlay (Hidden by Default) -->
+        <div id="reward-overlay" class="hidden">
+            <div class="envelope">
+                <div class="heart-seal">❤️</div>
+                <h1 class="reward-title">You're the absolute PAW-some! 🐾</h1>
+                <p class="reward-msg">"Every time I think of you, my heart wags like a happy Corgi!"</p>
+                <button class="reset-btn" onclick="location.reload()">Play again! 🦴</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
