@@ -46,11 +46,12 @@ function createBubble() {
     // Random position across the width
     bubble.style.left = Math.random() * (window.innerWidth - 80) + 'px';
 
-    // Zig Zag motion logic
-    const isZigZag = Math.random() > 0.5 && milestoneLevel > 1;
+    // Zig Zag motion logic (More aggressive)
+    const isZigZag = Math.random() > 0.4 && milestoneLevel > 1;
     if (isZigZag) {
-        bubble.style.setProperty('--zig-zag-dist', (Math.random() > 0.5 ? 100 : -100) + 'px');
-        bubble.style.animation = `floatUp ${bubbleDuration}s linear forwards, zigZag 2s ease-in-out infinite alternate`;
+        const zigDist = Math.random() > 0.5 ? 120 : -120;
+        bubble.style.setProperty('--zig-zag-dist', zigDist + 'px');
+        bubble.style.animation = `floatUp ${bubbleDuration}s linear forwards, zigZag 1s ease-in-out infinite alternate`;
     } else {
         bubble.style.animationDuration = bubbleDuration + 's';
     }
@@ -153,8 +154,8 @@ let bubbleInterval = setInterval(createBubble, gameSpeed);
 const style = document.createElement('style');
 style.textContent = `
     @keyframes zigZag {
-        from { transform: translateX(0); }
-        to { transform: translateX(var(--zig-zag-dist)); }
+        from { margin-left: 0; }
+        to { margin-left: var(--zig-zag-dist); }
     }
 `;
 document.head.appendChild(style);
