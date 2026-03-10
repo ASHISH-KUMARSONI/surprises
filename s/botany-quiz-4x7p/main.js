@@ -343,7 +343,7 @@ function showQuestion() {
     resetState();
     const question = quizQuestions[currentQuestionIndex];
     questionText.innerText = question.q;
-    progressText.innerText = `Question ${currentQuestionIndex + 1}/25`;
+    progressText.innerText = `Question ${currentQuestionIndex + 1}/10`;
 
     question.options.forEach((opt, index) => {
         const btn = document.createElement('button');
@@ -387,7 +387,7 @@ function selectOption(btn, index) {
 
     setTimeout(() => {
         currentQuestionIndex++;
-        if (currentQuestionIndex < 25) {
+        if (currentQuestionIndex < 10) {
             showQuestion();
         } else {
             showResults();
@@ -409,9 +409,9 @@ function showResults() {
     document.getElementById('final-score-val').innerText = score;
 
     let rank = "";
-    if (score === 25) rank = "Botanical Legend! 🏆 Your PI is weeping with joy.";
-    else if (score > 18) rank = "Grant Proposal Accepted! 📜 Brilliant mind.";
-    else if (score > 10) rank = "Research Fellow. 🧪 Keep studying the Arabidopsis.";
+    if (score === 10) rank = "Botanical Legend! 🏆 Your PI is weeping with joy.";
+    else if (score > 7) rank = "Grant Proposal Accepted! 📜 Brilliant mind.";
+    else if (score > 4) rank = "Research Fellow. 🧪 Keep studying the Arabidopsis.";
     else rank = "Undergrad intern... 🍂 Maybe try zoology?";
 
     document.getElementById('rank-text').innerText = rank;
