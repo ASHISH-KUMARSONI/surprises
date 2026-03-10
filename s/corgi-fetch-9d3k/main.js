@@ -1,17 +1,32 @@
 const targetArea = document.getElementById('target-area');
-const countSpan = document.getElementById('count');
-const progressBar = document.getElementById('progress');
+const scoreVal = document.getElementById('score-val');
+const bestVal = document.getElementById('best-val');
+const milestoneText = document.getElementById('milestone-text');
 const headline = document.getElementById('headline');
-const rewardOverlay = document.getElementById('reward-overlay');
 const corgi = document.getElementById('corgi-actor');
 const corgiTail = document.getElementById('corgi-tail');
 
 let score = 0;
-const targetScore = 5;
+let highScore = localStorage.getItem('doggy-high-score') || 0;
 let isGameOver = false;
+let gameSpeed = 1500;
+let bubbleDuration = 5;
+let milestoneLevel = 1;
+
+// Load high score
+bestVal.innerText = highScore;
+
+// Levels and Dogs
+const levels = [
+    { threshold: 0, name: "Corgi Day", dogClass: "", bg: "#e3f2fd" },
+    { threshold: 10, name: "Shepherd Sunset", dogClass: "shepherd", bg: "#ffccbc" },
+    { threshold: 25, name: "Shiba Night", dogClass: "shiba", bg: "#283593" },
+    { threshold: 50, name: "Husky Galaxy", dogClass: "husky", bg: "#000b1e" }
+];
 
 // Bubble types
 const treats = ['🦴', '🍗', '💕', '🐾', '🥯'];
+const dangers = ['💣', '🍫', '🏢']; // Things that can "kill" a dog (comically)
 
 function createBubble() {
     if (isGameOver) return;
@@ -19,28 +34,38 @@ function createBubble() {
     const bubble = document.createElement('div');
     bubble.classList.add('treat-bubble');
 
-    // Choose a random treat
-    const randomTreat = treats[Math.floor(Math.random() * treats.length)];
-    bubble.innerText = randomTreat;
+    // Determine if it's a danger bubble (starts after 5 points)
+    const isDanger = Math.random() > 0.8 && score > 5;
+    if (isDanger) {
+        bubble.classList.add('danger');
+        bubble.innerText = dangers[Math.floor(Math.random() * dangers.length)];
+    } else {
+        bubble.innerText = treats[Math.floor(Math.random() * treats.length)];
+    }
 
     // Random position across the width
     bubble.style.left = Math.random() * (window.innerWidth - 80) + 'px';
 
-    // Variable speed
-    const duration = Math.random() * 3 + 4; // 4s - 7s
-    bubble.style.animationDuration = duration + 's';
+    // Zig Zag motion logic
+    const isZigZag = Math.random() > 0.5 && milestoneLevel > 1;
+    if (isZigZag) {
+        bubble.style.setProperty('--zig-zag-dist', (Math.random() > 0.5 ? 100 : -100) + 'px');
+        bubble.style.animation = `floatUp ${bubbleDuration}s linear forwards, zigZag 2s ease-in-out infinite alternate`;
+    } else {
+        bubble.style.animationDuration = bubbleDuration + 's';
+    }
 
     bubble.addEventListener('click', (e) => {
         if (isGameOver) return;
 
-        score++;
-        feedCorgi();
-
-        // Remove the bubble instantly
+        if (isDanger) {
+            killDog();
+        } else {
+            score++;
+            feedCorgi();
+            updateUI();
+        }
         bubble.remove();
-
-        // Update UI
-        updateUI();
     });
 
     targetArea.appendChild(bubble);
@@ -48,78 +73,88 @@ function createBubble() {
     // Self-cleanup after animation ends
     setTimeout(() => {
         bubble.remove();
-    }, duration * 1000);
+    }, bubbleDuration * 1000);
 }
 
-// Update the UI progress
+// Update the UI
 function updateUI() {
-    countSpan.innerText = targetScore - score;
-    const percent = (score / targetScore) * 100;
-    progressBar.style.width = percent + '%';
+    scoreVal.innerText = score;
 
-    if (score >= targetScore) {
-        winGame();
+    if (score > highScore) {
+        highScore = score;
+        localStorage.setItem('doggy-high-score', highScore);
+        bestVal.innerText = highScore;
+    }
+
+    checkMilestones();
+}
+
+function checkMilestones() {
+    const nextLevel = levels.filter(l => score >= l.threshold).pop();
+    if (nextLevel && levels.indexOf(nextLevel) + 1 > milestoneLevel) {
+        milestoneLevel = levels.indexOf(nextLevel) + 1;
+        applyMilestone(nextLevel);
     }
 }
 
-// Happy Corgi action!
-function feedCorgi() {
-    // Make Corgi jump/wobble
-    corgi.style.transform = 'scale(1.2) translateY(-10px)';
+function applyMilestone(level) {
+    milestoneText.innerText = `Level ${milestoneLevel}: ${level.name} ✨`;
+    document.body.style.backgroundColor = level.bg;
 
-    // Make tail wag fast!
+    // Change dog type
+    corgi.className = `corgi ${level.dogClass}`;
+
+    // Increase difficulty
+    gameSpeed = Math.max(500, gameSpeed - 200);
+    bubbleDuration = Math.max(2, bubbleDuration - 0.5);
+
+    // Flash excitement
+    milestoneText.style.fontSize = "1.5rem";
+    setTimeout(() => milestoneText.style.fontSize = "0.9rem", 1000);
+
+    // Reset spawner with new speed
+    clearInterval(bubbleInterval);
+    setInterval(createBubble, gameSpeed);
+}
+
+function feedCorgi() {
+    corgi.style.transform = 'scale(1.2) translateY(-10px)';
     corgiTail.style.animation = 'wag-fast 0.1s infinite alternate';
 
     setTimeout(() => {
-        corgi.style.transform = 'scale(1) translateY(0)';
-        // Revert to slower wag unless it's the game end
+        corgi.style.transform = `scale(${isGameOver ? 0 : 1}) translateY(0)`;
         if (!isGameOver) {
             corgiTail.style.animation = 'wag-slow 0.4s infinite alternate';
         }
     }, 400);
 }
 
-function winGame() {
+function killDog() {
     isGameOver = true;
-    headline.innerText = "YUM! Who's a good boy? 🦴✨";
+    document.body.classList.add('dead');
+    corgi.classList.add('dead-dog');
+    headline.innerText = "NOOO! 😱 BRUTAL!";
+    milestoneText.innerText = `Final Score: ${score}`;
 
-    // Celeb!
+    // Disable any clicking
+    targetArea.style.pointerEvents = 'none';
+
     setTimeout(() => {
-        rewardOverlay.classList.remove('hidden');
-        triggerConfetti();
-    }, 1000);
-}
-
-function triggerConfetti() {
-    const end = Date.now() + (3 * 1000);
-    const colors = ['#fb8c00', '#ff4081', '#ffcc80'];
-
-    (function frame() {
-        confetti({
-            particleCount: 3,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 },
-            colors: colors
-        });
-        confetti({
-            particleCount: 3,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            colors: colors
-        });
-
-        if (Date.now() < end) {
-            requestAnimationFrame(frame);
+        if (confirm("Game Over! The doggo is gone... 😭\n\nFinal Score: " + score + "\n\nTry to save the next dog?")) {
+            location.reload();
         }
-    }());
+    }, 1500);
 }
 
-// Logic to spawn bubbles every 1.5s
-const bubbleInterval = setInterval(createBubble, 1500);
+// Initial Spawner
+let bubbleInterval = setInterval(createBubble, gameSpeed);
 
-// Cleanup interval if game over
-setInterval(() => {
-    if (isGameOver) clearInterval(bubbleInterval);
-}, 500);
+// Add Zig Zag Keyframe via JS for flexibility
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes zigZag {
+        from { transform: translateX(0); }
+        to { transform: translateX(var(--zig-zag-dist)); }
+    }
+`;
+document.head.appendChild(style);

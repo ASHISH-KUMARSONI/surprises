@@ -83,7 +83,7 @@ body {
     z-index: 20;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
-    padding: 20px;
+    padding: 15px 30px;
     border-radius: 30px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
@@ -91,31 +91,131 @@ body {
 #headline {
     font-family: 'Outfit', sans-serif;
     color: var(--primary);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
 }
 
-.progress-bar-container {
-    width: 250px;
-    height: 15px;
-    background: #fff;
-    border-radius: 10px;
-    margin: 10px auto;
-    overflow: hidden;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.progress-bar {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(90deg, #ff9100 0%, #ff4081 100%);
-    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.score-card {
+    display: flex;
+    flex-direction: column;
 }
 
-#counter-text {
+.score-card .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.score-card span:last-child {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+}
+
+#milestone-text {
     font-weight: 700;
     margin-top: 10px;
     color: #ef6c00;
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+}
+
+/* --- Dog Variations --- */
+.corgi.shepherd .body,
+.corgi.shepherd .ear {
+    background: #8d6e63 !important;
+}
+
+/* German Shepherd Brown */
+.corgi.shiba .body,
+.corgi.shiba .ear {
+    background: #ffa726 !important;
+}
+
+/* Shiba Orange */
+.corgi.husky .body,
+.corgi.husky .ear {
+    background: #78909c !important;
+}
+
+/* Husky Grey */
+
+/* --- Danger Bubbles --- */
+.treat-bubble.danger {
+    background: radial-gradient(circle at 30% 30%, #ff5252, #b71c1c);
+    box-shadow: 0 0 15px rgba(255, 82, 82, 0.5);
+}
+
+/* --- Death & Brutality --- */
+body.dead {
+    background: #1a1a1a !important;
+    animation: shake 0.5s;
+}
+
+.corgi.dead-dog {
+    animation: splat 1s forwards cubic-bezier(0.36, 0, 0.66, -0.56);
+}
+
+.corgi.dead-dog .mouth {
+    display: none;
+}
+
+.corgi.dead-dog .face::after {
+    content: 'X X';
+    position: absolute;
+    top: 35px;
+    left: 40px;
+    font-weight: 900;
+    color: #1a1a1a;
+    letter-spacing: 10px;
+    font-size: 15px;
+}
+
+@keyframes splat {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.5, 0.3) translateY(50px);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(3, 0.05) translateY(100px);
+        opacity: 0;
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
 }
 
 /* --- The Corgi --- */
