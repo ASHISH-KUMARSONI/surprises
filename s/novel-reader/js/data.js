@@ -47,6 +47,27 @@ export const library = {
         author: "Clara Vance",
         tags: ["romance", "modern", "passionate", "witty"],
         file: "brush_with_fate.json"
+    },
+    "starlit_sonatina": {
+        id: "starlit_sonatina",
+        title: "The Starlit Sonatina",
+        author: "Julian Keys",
+        tags: ["romance", "passion", "classic", "modern"],
+        file: "starlit_sonatina.json"
+    },
+    "midnight_museum": {
+        id: "midnight_museum",
+        title: "Midnight at the Museum",
+        author: "Isla Reyes",
+        tags: ["romance", "mystery", "dark", "thriller"],
+        file: "midnight_museum.json"
+    },
+    "bakers_dozen": {
+        id: "bakers_dozen",
+        title: "The Baker's Dozen",
+        author: "Fiona Hayes",
+        tags: ["romance", "cozy", "witty", "family"],
+        file: "bakers_dozen.json"
     }
 };
 
@@ -55,27 +76,27 @@ export const questions = [
         id: "q_setting",
         text: "How would you describe your ideal evening?",
         options: [
-            { text: "Curled up by the fireplace with tea", tags: ["cozy", "classic", "witty"] },
+            { text: "Curled up by the fireplace with tea", tags: ["cozy", "classic", "family"] },
             { text: "A coffee shop coding session", tags: ["modern", "tech", "cozy"] },
-            { text: "Exploring an enchanted winter forest", tags: ["fantasy", "magic", "passionate"] }
+            { text: "Exploring a museum at midnight", tags: ["mystery", "dark", "thriller"] }
         ]
     },
     {
         id: "q_protagonist",
         text: "What kind of protagonist draws you in?",
         options: [
-            { text: "A brilliant but overworked developer", tags: ["tech", "modern", "romance"] },
+            { text: "A brilliant but overworked creative", tags: ["tech", "modern", "witty"] },
             { text: "A fierce mortal defying a magical lord", tags: ["fantasy", "magic", "passionate"] },
-            { text: "Innocent, impulsive, and hopelessly romantic", tags: ["poetry", "passionate", "tragic"] }
+            { text: "Innocent, impulsive, and hopelessly romantic", tags: ["passion", "passionate", "tragic"] }
         ]
     },
     {
         id: "q_conflict",
         text: "What obstacle would you face in your love story?",
         options: [
-            { text: "Misunderstandings and career ambitions", tags: ["tech", "modern", "cozy"] },
+            { text: "Small town rivalries and career ambitions", tags: ["cozy", "modern", "family"] },
             { text: "A war between rival magical courts", tags: ["fantasy", "magic", "passionate"] },
-            { text: "Star-crossed fate and feuding families", tags: ["tragic", "passionate", "poetry"] }
+            { text: "A grand heist and undercover secrets", tags: ["mystery", "dark", "thriller"] }
         ]
     }
 ];
