@@ -87,10 +87,7 @@ const completeQuiz = () => {
     // 3. Sort descending by score
     novelScores.sort((a, b) => b.score - a.score);
 
-    // 4. Send top 3 (or more if tie) to callback
-    const topNovels = novelScores.slice(0, 3).map(item => item.novel);
-
     if (onQuizComplete) {
-        onQuizComplete(topNovels);
+        onQuizComplete(novelScores);
     }
 };
