@@ -1,6 +1,7 @@
 import { getProgress, clearAllProgress } from './storage.js';
 import { initQuiz } from './quiz.js';
 import { loadNovel } from './reader.js';
+import { library } from './data.js';
 
 // Views
 const views = {
@@ -26,6 +27,7 @@ const showView = (viewName) => {
 // Welcome View Logic
 const btnStartFresh = document.getElementById('btn-start-fresh');
 const btnContinue = document.getElementById('btn-continue');
+const btnSurpriseMe = document.getElementById('btn-surprise-me');
 
 const initApp = () => {
     const progress = getProgress();
@@ -41,6 +43,14 @@ btnStartFresh.addEventListener('click', () => {
     clearAllProgress();
     showView('quiz');
     initQuiz(handleQuizCompletion);
+});
+
+btnSurpriseMe.addEventListener('click', () => {
+    clearAllProgress();
+    const novelsArray = Object.values(library);
+    const randomNovel = novelsArray[Math.floor(Math.random() * novelsArray.length)];
+    showView('reader');
+    loadNovel(randomNovel.id, 0); // Open at page 0
 });
 
 btnContinue.addEventListener('click', () => {
