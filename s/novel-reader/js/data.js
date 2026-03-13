@@ -98,5 +98,17 @@ export const questions = [
             { text: "A war between rival magical courts", tags: ["fantasy", "magic", "passionate"] },
             { text: "A grand heist and undercover secrets", tags: ["mystery", "dark", "thriller"] }
         ]
+    },
+    {
+        id: "q_prank",
+        text: "Most important question: Do you like me?",
+        options: [
+            { text: "A. Yes", tags: ["romance"] },
+            { text: "B. !false", tags: ["romance"] },
+            { text: "C. Yes, but I'm pretending to think about it", tags: ["romance"] },
+            { text: "D. If option A is true, choose this", tags: ["romance"] },
+            { text: "E. If option B is true, choose this", tags: ["romance"] },
+            { text: "F. BJP", tags: ["romance"] }
+        ]
     }
 ];
