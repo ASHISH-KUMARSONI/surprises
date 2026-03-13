@@ -87,7 +87,9 @@ const completeQuiz = () => {
     // 3. Sort descending by score
     novelScores.sort((a, b) => b.score - a.score);
 
+    const topNovels = novelScores.map(item => item.novel);
+
     if (onQuizComplete) {
-        onQuizComplete(novelScores);
+        onQuizComplete(topNovels);
     }
 };
