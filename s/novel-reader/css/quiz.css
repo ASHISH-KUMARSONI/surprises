@@ -103,6 +103,13 @@
 /* --- Recommendation Selection View --- */
 .recommendations-card {
     padding: 3rem;
+    max-height: 90vh;
+    /* Adjust for padding/margins */
+    overflow-y: auto;
+    box-sizing: border-box;
+    /* Soft scrollbar for elegance */
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-secondary) transparent;
 }
 
 .section-title {

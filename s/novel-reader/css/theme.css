@@ -218,6 +218,7 @@ body {
 
 .mt-4 {
     margin-top: 1.5rem;
+    flex-shrink: 0;
 }
 
 /* --- Welcome View specific --- */
