@@ -26,6 +26,27 @@ export const library = {
         author: "E. L. Night",
         tags: ["romance", "fantasy", "magic", "passionate"],
         file: "crown_of_thorns.json"
+    },
+    "coffee_shop_conundrum": {
+        id: "coffee_shop_conundrum",
+        title: "The Coffee Shop Conundrum",
+        author: "Elise Woods",
+        tags: ["romance", "cozy", "modern", "witty"],
+        file: "coffee_shop_conundrum.json"
+    },
+    "whispers_of_the_ocean": {
+        id: "whispers_of_the_ocean",
+        title: "Whispers of the Ocean",
+        author: "Silas Vance",
+        tags: ["romance", "passionate", "tragic", "magic"],
+        file: "whispers_of_the_ocean.json"
+    },
+    "brush_with_fate": {
+        id: "brush_with_fate",
+        title: "A Brush with Fate",
+        author: "Clara Vance",
+        tags: ["romance", "modern", "passionate", "witty"],
+        file: "brush_with_fate.json"
     }
 };
 
