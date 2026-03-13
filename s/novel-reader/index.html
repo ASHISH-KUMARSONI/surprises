@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Lovely Reader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css?v=2">
+    <link rel="stylesheet" href="css/quiz.css?v=2">
+    <link rel="stylesheet" href="css/reader.css?v=2">
+</head>
+
+<body>
+    <!-- Floating Background Particles (Theme Element) -->
+    <div class="background-particles" id="particles-container"></div>
+
+    <!-- App Container -->
+    <main class="app-container">
+
+        <!-- View 1: Welcome & Landing -->
+        <section id="view-welcome" class="view active">
+            <div class="glass-card welcome-card">
+                <h1 class="welcome-title">Stories Await</h1>
+                <p class="welcome-subtitle">Every beautiful story begins with a perfect choice.</p>
+                <div class="welcome-actions">
+                    <button id="btn-start-fresh" class="btn btn-primary">Discover a New Story</button>
+                    <button id="btn-continue" class="btn btn-secondary hidden">Continue Reading</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- View 2: Quiz Flow -->
+        <section id="view-quiz" class="view hidden">
+            <div class="glass-card quiz-card">
+                <div class="quiz-header">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="quiz-progress"></div>
+                    </div>
+                    <span class="question-tracker" id="quiz-tracker">1 / 3</span>
+                </div>
+                <div class="quiz-content" id="quiz-content-area">
+                    <h2 class="question-text" id="question-text">Loading question...</h2>
+                    <div class="options-container" id="options-container">
+                        <!-- Options dynamically injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- View 3: Recommendation Selection -->
+        <section id="view-recommendations" class="view hidden">
+            <div class="glass-card recommendations-card">
+                <h2 class="section-title">Your Perfect Matches</h2>
+                <p class="section-subtitle">Based on your desires, these tales beckon you.</p>
+
+                <div class="novel-list" id="novel-recommendations-list">
+                    <!-- Recommended Novels dynamically injected here -->
+                </div>
+                <button id="btn-restart-quiz" class="btn btn-text mt-4">Retake Quiz</button>
+            </div>
+        </section>
+
+        <!-- View 4: The Reader -->
+        <section id="view-reader" class="view hidden">
+            <div class="reader-header">
+                <button id="btn-back-to-menu" class="btn-icon" aria-label="Back to Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </button>
+                <span class="reader-novel-title" id="reader-title">Novel Title</span>
+                <div class="reader-settings">
+                    <span class="reader-page-indicator" id="reader-page-info">Page 1</span>
+                </div>
+            </div>
+
+            <div class="reader-body">
+                <div class="page-container" id="page-container">
+                    <div class="page-content active-page" id="page-text">
+                        Loading story...
+                    </div>
+                </div>
+            </div>
+
+            <div class="reader-controls">
+                <button id="btn-prev-page" class="btn-nav" disabled>Previous</button>
+                <button id="btn-next-page" class="btn-nav">Next page</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

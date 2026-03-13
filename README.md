@@ -13,6 +13,7 @@ A collection of cute, interactive surprises, mini-games, and lovely pranks for y
 - **The Compliment Jar**: [https://ashish-kumarsoni.github.io/surprises/s/sweet-jar-5n7m/](https://ashish-kumarsoni.github.io/surprises/s/sweet-jar-5n7m/) - Open the jar to release floating hearts filled with sweet compliments.
 - **Hungry Corgi Fetch**: [https://ashish-kumarsoni.github.io/surprises/s/corgi-fetch-9d3k/](https://ashish-kumarsoni.github.io/surprises/s/corgi-fetch-9d3k/) - Feed the cute Corgi floating treats to reveal a special paw-some message!
 - **Botanist's Secret Garden**: [https://ashish-kumarsoni.github.io/surprises/s/botany-quiz-4x7p/](https://ashish-kumarsoni.github.io/surprises/s/botany-quiz-4x7p/) - A cute but brutal PhD-level Botany quiz. Can you make your character bloom?
+- **A Lovely Novel Reader**: [https://ashish-kumarsoni.github.io/surprises/s/novel-reader/](https://ashish-kumarsoni.github.io/surprises/s/novel-reader/) - A personalized tag-based recommender and beautiful smooth page-turning novel reader.
 
 ## 🛠️ How to Add a New Surprise
 1. Create a new folder inside `/s/` with a non-guessable name: `mkdir s/love-letter-x9y2`

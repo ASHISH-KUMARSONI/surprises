@@ -1,0 +1,243 @@
+/* =========================================
+   Reader View - Typography & Book Layout
+   ========================================= */
+
+#view-reader {
+    background-color: var(--clr-bg);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.4s ease;
+
+    /* Elegant book-like shadow border inside */
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.03);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+#view-reader.active {
+    align-items: stretch;
+}
+
+/* Header Navbar */
+.reader-header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    background: linear-gradient(to bottom, var(--clr-bg) 70%, transparent);
+    z-index: 10;
+    width: 100%;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    color: var(--clr-text-muted);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+    background: var(--clr-secondary);
+    color: var(--clr-text-main);
+}
+
+.reader-novel-title {
+    font-family: var(--font-roman);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--clr-text-muted);
+    letter-spacing: 0.5px;
+}
+
+.reader-page-indicator {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--clr-text-muted);
+    background: var(--clr-secondary);
+    padding: 4px 12px;
+    border-radius: 12px;
+}
+
+/* Main Body - The Page Content */
+.reader-body {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2rem 1.5rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    /* Soft scrollbar for elegance */
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-secondary) transparent;
+}
+
+.page-container {
+    width: 100%;
+    position: relative;
+    perspective: 1200px;
+    /* For 3D page flip effect if desired */
+}
+
+/* Base page formatting */
+.page-content {
+    font-family: var(--font-roman);
+    font-size: 1.35rem;
+    /* Larger comfortable reading size */
+    line-height: 1.8;
+    color: var(--clr-text-novel);
+    text-align: justify;
+    word-break: break-word;
+    /* initial state for transitions */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+}
+
+.page-content.active-page {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+}
+
+.page-content p {
+    margin-bottom: 1.5rem;
+    text-indent: 1.5rem;
+    /* Classic novel indent */
+}
+
+.page-content p:first-of-type {
+    text-indent: 0;
+    /* First paragraph isn't indented */
+}
+
+/* Novel Chapter Title Heading Formats */
+.page-content h2,
+.page-content h3 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    text-indent: 0;
+}
+
+/* --- Page Turn Animations --- */
+
+/* Sliding Left (Next Page) */
+.slide-in-right {
+    animation: slideInRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slide-out-left {
+    animation: slideOutLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Sliding Right (Previous Page) */
+.slide-in-left {
+    animation: slideInLeft 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.slide-out-right {
+    animation: slideOutRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+/* Reader Controls (Bottom) */
+.reader-controls {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btn-nav {
+    background: transparent;
+    border: none;
+    color: var(--clr-primary);
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.btn-nav:hover:not(:disabled) {
+    background: rgba(212, 163, 115, 0.1);
+}
+
+.btn-nav:disabled {
+    color: var(--clr-text-muted);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
