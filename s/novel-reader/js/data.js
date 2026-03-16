@@ -68,6 +68,13 @@ export const library = {
         author: "Fiona Hayes",
         tags: ["romance", "cozy", "witty", "family"],
         file: "bakers_dozen.json"
+    },
+    "prachis_green_dilemma": {
+        id: "prachis_green_dilemma",
+        title: "Prachi's Green Dilemma",
+        author: "A Secret Admirer",
+        tags: ["romance", "cozy", "witty", "modern"],
+        file: "prachis_green_dilemma.json"
     }
 };
 
