@@ -75,6 +75,13 @@ export const library = {
         author: "A Secret Admirer",
         tags: ["romance", "cozy", "witty", "modern"],
         file: "prachis_green_dilemma.json"
+    },
+    "wifi_in_the_himalayas": {
+        id: "wifi_in_the_himalayas",
+        title: "WiFi in the Himalayas",
+        author: "A Secret Admirer",
+        tags: ["romance", "cozy", "witty", "modern", "mystery"],
+        file: "wifi_in_the_himalayas.json"
     }
 };
 
