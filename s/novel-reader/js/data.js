@@ -82,6 +82,20 @@ export const library = {
         author: "A Secret Admirer",
         tags: ["romance", "cozy", "witty", "modern", "mystery"],
         file: "wifi_in_the_himalayas.json"
+    },
+    "the_revival_of_thistle": {
+        id: "the_revival_of_thistle",
+        title: "The Revival of Thistle",
+        author: "A Secret Admirer",
+        tags: ["romance", "cozy", "inspiring", "modern"],
+        file: "the_revival_of_thistle.json"
+    },
+    "the_shifting_ridge": {
+        id: "the_shifting_ridge",
+        title: "The Shifting Ridge",
+        author: "A Secret Admirer",
+        tags: ["fantasy", "mystery", "suspense", "magic", "romance"],
+        file: "the_shifting_ridge.json"
     }
 };
 
