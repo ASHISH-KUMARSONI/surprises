@@ -28,6 +28,7 @@ const showView = (viewName) => {
 const btnStartFresh = document.getElementById('btn-start-fresh');
 const btnContinue = document.getElementById('btn-continue');
 const btnSurpriseMe = document.getElementById('btn-surprise-me');
+const btnSkipQuiz = document.getElementById('btn-skip-quiz');
 
 const initApp = () => {
     const progress = getProgress();
@@ -43,6 +44,13 @@ btnStartFresh.addEventListener('click', () => {
     clearAllProgress();
     showView('quiz');
     initQuiz(handleQuizCompletion);
+});
+
+btnSkipQuiz.addEventListener('click', () => {
+    clearAllProgress();
+    const novelsArray = Object.values(library);
+    // Directly show recommended items (all of them or core ones)
+    handleQuizCompletion(novelsArray);
 });
 
 btnSurpriseMe.addEventListener('click', () => {
