@@ -1,0 +1,56 @@
+
+--- 📖 bakers_dozen.json ---
+Page 0:
+<h2>Chapter 1: A Sweet Rivalry</h2><p>Prachi breathed in the scent of fresh cinnamon and blooming freesia. She stood proudly outside her newly opened flower shop, 'Petal Pushers,' right on the quaint, cobblestone main street of Willow Creek. It was her dream realized. The shop was flooded with sunlight, bursting with vibrant arrangements and trailing ivy.</p><p>However, her neighbor was less enthusiastic. Right next door was 'Oven & Ovens,' the town's most popular, established bakery. The owner, a grumpy, broad-shouldered man named Ashish, stood glaring at her from behind a stack of sourdough loaves through his flour-dusted window.</p>
+
+--- 📖 brush_with_fate.json ---
+Page 0:
+<h2>Chapter 1: The Rivalry</h2><p>The smell of turpentine and cheap coffee was deeply ingrained into Prachi's DNA. She wiped a smudge of cerulean blue from her cheek, standing back to observe the chaotic explosion of color on her canvas. She was known around the arts district as a whirlwind, painting with fierce, emotive strokes that bordered on abstract. It was messy, it was loud, and she loved it.</p><p>Then there was Ashish.</p><p>Ashish Soni occupied the studio across the hall in their rundown industrial building. His work was nothing like hers. It was hyper-realistic, meticulous, controlled down to the microscopic brush hairs. Prachi found it maddeningly perfect and completely devoid of soul. Ashish found Prachi's work to be 'an undisciplined assault on the retinas.'</p>
+
+--- 📖 coffee_shop_conundrum.json ---
+Page 0:
+<h2>Chapter 1: The Daily Grind</h2><p>Prachi wiped the espresso machine for the third time in ten minutes. The morning rush at 'The Daily Grind' had finally subsided, leaving behind the comforting aroma of roasted Ethiopian beans and the soft hum of the barista fridge. She loved this little independent coffee shop in the heart of the city. It was her sanctuary, her paycheck, and lately, the source of her biggest daily annoyance.</p><p>The bell above the door jingled, and Prachi didn't even need to look up to know who it was. Exactly 10:15 AM. Like clockwork.</p>
+
+--- 📖 crown_of_thorns.json ---
+Page 0:
+<h2>Chapter 1: The Bargain</h2><p>Prachi tightened her grip on the worn leather hilt of her dagger, her breath pluming in the freezing night air. The Winter Court was not a place for mortals. Ice coated every surface, refracting the moonlight into fractured rainbows that danced across the frozen marble of the palace walls. She was not here by choice. She was here to save her sister.</p><p>The massive doors of the throne room groaned open, revealing a cavernous space glittering with frost and shadow. At the far end, slouched lazily upon a throne of jagged ice, was Ashish, the High Lord of Winter.</p>
+
+--- 📖 midnight_museum.json ---
+Page 0:
+<h2>Chapter 1: The New Exhibit</h2><p>Dr. Prachi Soni adjusted her thick-rimmed glasses, carefully dusting a 16th-century golden chalice with a fine camel-hair brush. The Metropolitan Museum of Art was silent, save for the hum of the climate control system. At 2:00 AM, it was her domain. She was an art historian, brilliant but notoriously hermitic, preferring the quiet company of antiquities to the chaotic, loud interactions of the living world.</p>
+
+--- 📖 prachis_green_dilemma.json ---
+Page 0:
+<h2>Chapter 1: The Apartment of Feelings</h2><p>Prachi's apartment on the third floor of Banyan Heights was, by most measurable standards, alive. Not just alive in the way most homes are—warm, lived-in, smelling of instant coffee and ambition—but genuinely, extravagantly alive. Every windowsill hosted a pot. Every shelf cradled leaves. Every corner was an ecosystem.</p><p>Prachi Joshi was a creature of this ecosystem. At twenty-six, she spent her days navigating vector grids and layout parameters as a freelance graphic designer, her hair perpetually knotted at the top of her head in a loose, casual bun while she works inside her Delhi workspace. She owned seventeen houseplants, one dramatic rose bush in a terracotta pot, and a large orange room heater that sat in the center of the living room like a monarch on a throne.</p>
+
+--- 📖 pride_and_prejudice.json ---
+Page 0:
+<h2>Chapter 1</h2><p>It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.</p><p>However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.</p>
+
+--- 📖 romeo_and_juliet.json ---
+Page 0:
+<p><em>PROLOGUE</em></p><p>Two households, both alike in dignity,<br>In fair Verona, where we lay our scene,<br>From ancient grudge break to new mutiny,<br>Where civil blood makes civil hands unclean.</p><p>From forth the fatal loins of these two foes<br>A pair of star-cross'd lovers take their life;<br>Whose misadventured piteous overthrows<br>Do with their death bury their parents' strife.</p>
+
+--- 📖 starlit_sonatina.json ---
+Page 0:
+<h2>Chapter 1: Conflicting Melodies</h2><p>Ashish struck the final chord of Beethoven's 'Appassionata', his hands hovering over the grand piano's ivory keys. The concert hall was empty save for the janitor sleeping in the back row, but Ashish played as if he were performing for royalty. He was a prodigy, a purist, and notoriously difficult to work with. Music, to him, was an exact science of emotion, demanding perfect discipline.</p><p>As the final notes decayed into silence, a jarring, distinctly un-classical sound drifted through the heavy velvet curtains. It was a saxophone, wailing out a loose, syncopated jazz riff that completely destroyed the sanctity of Ashish's silence.</p>
+
+--- 📖 the_algorithm_of_us.json ---
+Page 0:
+<h2>Chapter 1: Syntax Error</h2><p>The bell above the door of Brewed Awakenings chimed, a cheerful sound that completely contrasted with Prachi's current mood. She was staring at her laptop screen, the cursor blinking mockingly next to a line of code she had stared at for three hours. It was a Saturday, the coffee shop was packed, and the air was thick with the scent of roasted beans and impending deadlines.</p><p>She took a sip of her lukewarm Americano and grimaced. 'Just compile,' she whispered to the machine. It threw back another stack trace of bright red errors. She let her head drop onto the cool surface of the wooden table.</p>
+
+--- 📖 the_revival_of_thistle.json ---
+Page 0:
+<h2>Chapter 1: The Noise and the Need</h2><p>The shelter on a Sunday afternoon was a sensory overload. A heavy, humid orchestra of frantic barking, the sharp metallic rattle of chain-link gates, and the high-pitched chatter of families holding puppies. Prachi Joshi stood in the exact center of the intake stall, her fingers laced tightly around a printed adoption slip.</p><p>The slip was for a nine-month-old Golden Retriever named Sunny. Sunny was perfect. He possessed the kind of glossy, butter-colored coat that made people stop on the street and pull out their smartphones. When the foster brought him out, Sunny had bounded instantly into Prachi's arms, tail beating a happy rhythm against her shins, safe and eager for the world.</p>
+
+--- 📖 the_shifting_ridge.json ---
+Page 0:
+<h2>Chapter 1: The Golden Meadow</h2><p>The afternoon sun over the Kuari Pass bugyal was the kind of warmth that feels earned. Prachi Joshi sat with her legs stretched out over the golden subalpine grass, watching the snowcaps of Nanda Devi dominate the eastern horizon like a row of giant, peaceful anchors holding up the sky.</p><p>Dev sat beside her, unscrewing a thermal flask set between them on the gravel. 'You’re smiling into space again,' he laughed, handing her a plastic cup steaming with ginger tea.</p><p>'It's the height,' Prachi said, making her signature happy head-shake movement as she drank, feeling the absolute stillness settle deep inside her bones. There were no deadlines here, no data breach frames, no noise. Just the swell of the earth reaching into the sky, and absolute safety with the person resting beside her.</p>
+
+--- 📖 whispers_of_the_ocean.json ---
+Page 0:
+<h2>Chapter 1: The Stowaway</h2><p>The damp air of the lower deck smelled deeply of salt, tar, and fear. Prachi pulled the coarse burlap sack tighter around her shivering frame, her silken gown completely ruined by the week she'd spent hidden among the cargo crates. Above her, the sharp bark of orders and the rhythmic thud of rushing feet signaled that the 'Crimson Albatross' was underway.</p><p>She was free. Free from an arranged marriage to a cruel duke, free from the gilded cage of her ancestral home. Yet, she had traded one prison for the belly of a notorious privateer ship. She closed her eyes, praying to the ocean gods that she wouldn't be discovered.</p>
+
+--- 📖 wifi_in_the_himalayas.json ---
+Page 0:
+<h2>Chapter 1: The Wrong DM</h2><p>It was 11:47 PM on a Tuesday in Bangalore when Ashish made the most consequential typo of his professional life.</p><p>The blue glare of the monitor stood static against his face. At twenty-five, he was already carrying the absolute mental grid of a software engineer who understood debugging flawlessly, but understood sleep only in theory. In the background of his workspace desk-mat, several coffee ring stains sat like a small solar system, framing a mounting sense that the API migration he was responsible for was going to spectacularly collapse at 2 AM.</p><p>He grabbed his phone to message his colleague Priyanshi, who sat three desks away in the office but communicated exclusively over Slack because they were engineers and engineers did not speak directly when a digital channel was available.</p><p>He typed fast. He always typed fast. He hit send without reading back.</p><p>What he had meant to type: <em>Priyanshi — can you check the staging environ
