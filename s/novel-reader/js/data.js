@@ -37,14 +37,14 @@ export const library = {
     "whispers_of_the_ocean": {
         id: "whispers_of_the_ocean",
         title: "Whispers of the Ocean",
-        author: "Silas Vance",
+        author: "Silas Soni",
         tags: ["romance", "passionate", "tragic", "magic"],
         file: "whispers_of_the_ocean.json"
     },
     "brush_with_fate": {
         id: "brush_with_fate",
         title: "A Brush with Fate",
-        author: "Clara Vance",
+        author: "Clara Soni",
         tags: ["romance", "modern", "passionate", "witty"],
         file: "brush_with_fate.json"
     },
